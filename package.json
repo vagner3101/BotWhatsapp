@@ -1,0 +1,46 @@
+{
+  "name": "jfa-whatsapp-chatbot",
+  "version": "0.0.1",
+  "description": "Whatsapp Chatbot",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/main.js",
+    "dev:detach": "node src/main.js >> logs/console.log 2>&1 &",
+    "http-ctrl:dev": "node src/httpCtrl.js",
+    "http-ctrl:dev:detach": "node src/httpCtrl.js >> logs/console.log 2>&1 &",
+    "start": "pm2 start src/main.js --name wchatbot --log logs/console.log",
+    "stop": "pm2 stop wchatbot",
+    "restart": "pm2 restart wchatbot",
+    "reload": "pm2 reload wchatbot",
+    "http-ctrl:start": "pm2 start src/httpCtrl.js --name wchatbotcp --log logs/console.log",
+    "http-ctrl:stop": "pm2 stop wchatbotcp",
+    "http-ctrl:restart": "pm2 restart wchatbotcp",
+    "http-ctrl:reload": "pm2 reload wchatbotcp",
+    "log:console": "tail -f logs/console.log",
+    "log:conversations": "tail -f logs/conversations.log"
+  },
+  "repository": "git@github.com:jfadev/jfa-whatsapp-chatbot.git",
+  "bugs": {
+    "url": "https://github.com/jfadev/jfa-whatsapp-chatbot/issues"
+  },
+  "homepage": "https://github.com/jfadev/jfa-whatsapp-chatbot#readme",
+  "author": "Jordi Fernandes Alves <jfadev@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "nodejs",
+    "whatsapp",
+    "chatbot",
+    "venom"
+  ],
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.17.3",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "node-fetch": "^3.1.0",
+    "sync-fetch": "^0.3.1",
+    "venom-bot": "^4.0.10"
+  },
+  "devDependencies": {},
+  "main": "main.js"
+}
